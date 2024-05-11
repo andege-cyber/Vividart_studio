@@ -61,6 +61,7 @@ jobs:
       - name: Build, tag and push image to Amazon ECR
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+          ECR_ACCOUNT_ID: ${{ secrets.ECR_ACCOUNT_ID }}
           ECR_REPOSITORY: vividart_studio
           IMAGE_TAG: latest
         run: |
